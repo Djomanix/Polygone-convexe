@@ -1,12 +1,10 @@
-import java.awt.Point;
-
 /**
  *
  * @author Johan
  */
 public class ClockSort extends PolygonSorter {
 
-    public ClockSort(int[][] points) {
+    public ClockSort(double[][] points) {
         super(points);
     }
 
@@ -19,7 +17,7 @@ public class ClockSort extends PolygonSorter {
      * @return
      */
     @Override
-    public int compare(Point a, Point b) {
+    public int compare(PointDouble a, PointDouble b) {
         if (a.x - center.x >= 0 && b.x - center.x < 0)
             return +1;
         if (a.x - center.x < 0 && b.x - center.x >= 0)
@@ -31,7 +29,7 @@ public class ClockSort extends PolygonSorter {
         }
 
         // compute the cross product of vectors (center -> a) x (center -> b)
-        int det = (a.x - center.x) * (b.y - center.y) - (b.x - center.x) * (a.y - center.y);
+        double det = (a.x - center.x) * (b.y - center.y) - (b.x - center.x) * (a.y - center.y);
         if (det < 0.0d)
             return +1;
         if (det > 0.0d)
@@ -39,8 +37,8 @@ public class ClockSort extends PolygonSorter {
 
         // points a and b are on the same line from the center
         // check which point is closer to the center
-        int d1 = (a.x - center.x) * (a.x - center.x) + (a.y - center.y) * (a.y - center.y);
-        int d2 = (b.x - center.x) * (b.x - center.x) + (b.y - center.y) * (b.y - center.y);
+        double d1 = (a.x - center.x) * (a.x - center.x) + (a.y - center.y) * (a.y - center.y);
+        double d2 = (b.x - center.x) * (b.x - center.x) + (b.y - center.y) * (b.y - center.y);
         return (d1 > d2) ? +1 : -1;
     }
 }

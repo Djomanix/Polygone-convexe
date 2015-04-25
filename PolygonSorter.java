@@ -1,28 +1,27 @@
-import java.awt.Point;
 import java.util.Comparator;
 
 /**
  *
  * @author Johan
  */
-public abstract class PolygonSorter implements Comparator<Point> {
+public abstract class PolygonSorter implements Comparator<PointDouble> {
 
-    Point center;
+    PointDouble center;
 
-    public PolygonSorter(int[][] points) {
-        this.center = calcCenter(points);
+    public PolygonSorter(double[][] podoubles) {
+        this.center = calcCenter(podoubles);
     }
 
-    final Point calcCenter(int[][] points) {
-        int sumx = 0;
-        int sumy = 0;
-        for (int[] point : points) {
-            sumx += point[0];
-            sumy += point[1];
+    final PointDouble calcCenter(double[][] podoubles) {
+        double sumx = 0;
+        double sumy = 0;
+        for (double[] podouble : podoubles) {
+            sumx += podouble[0];
+            sumy += podouble[1];
         }
-        return new Point(sumx / points.length, sumy / points.length);
+        return new PointDouble(sumx / podoubles.length, sumy / podoubles.length);
     }
 
     @Override
-    public abstract int compare(Point a, Point b);
+    public abstract int compare(PointDouble a, PointDouble b);
 }

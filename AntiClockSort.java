@@ -1,5 +1,3 @@
-import java.awt.Point;
-
 /**
  *
  * @author Johan
@@ -7,7 +5,7 @@ import java.awt.Point;
  */
 public class AntiClockSort extends PolygonSorter {
 
-    public AntiClockSort(int[][] points) {
+    public AntiClockSort(double[][] points) {
         super(points);
     }
 
@@ -20,7 +18,7 @@ public class AntiClockSort extends PolygonSorter {
      * @return
      */
     @Override
-    public int compare(Point a, Point b) {
+    public int compare(PointDouble a, PointDouble b) {
         if (a.x - center.x >= 0 && b.x - center.x < 0)
             return -1;
         if (a.x - center.x < 0 && b.x - center.x >= 0)
