@@ -1,8 +1,6 @@
-import com.sun.javafx.geom.Vec2d;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 
 /**
  *
@@ -19,7 +17,7 @@ public class ConvexPolygon {
     public ArrayList<PointDouble> getPointDoubles() {
         return points;
     }
-    
+
     public double[] GetXPointDoubles() {
         double xpoints[] = new double[this.points.size()];
         int c = 0;
@@ -49,17 +47,17 @@ public class ConvexPolygon {
         return vertices;
     }
 
-    public Vec2d[] Getaxes() {
-        Vec2d[] axes = new Vec2d[this.points.size()];
+    public PointDouble[] Getaxes() {
+        PointDouble[] axes = new PointDouble[this.points.size()];
         for (int i = 0; i < this.points.size(); i++) {
             // get the current vertex
-            Vec2d v1 = new Vec2d(this.points.get(i).getX(), this.points.get(i).getY());
+            PointDouble v1 = new PointDouble(this.points.get(i).getX(), this.points.get(i).getY());
             // get the next vertex
-            Vec2d v2 = new Vec2d(this.points.get(i + 1 == this.points.size() ? 0 : i + 1).getX(), this.points.get(i + 1 == this.points.size() ? 0 : i + 1).getY());
+            PointDouble v2 = new PointDouble(this.points.get(i + 1 == this.points.size() ? 0 : i + 1).getX(), this.points.get(i + 1 == this.points.size() ? 0 : i + 1).getY());
             // subtract the two to get the edge vector
-            Vec2d edge = new Vec2d((v1.x + (-v2.x)), (v1.y + (-v2.y)));
+            PointDouble edge = new PointDouble((v1.x + (-v2.x)), (v1.y + (-v2.y)));
             // get either perpendicular vector
-            Vec2d normal = new Vec2d((-edge.y), edge.x);
+            PointDouble normal = new PointDouble((-edge.y), edge.x);
             // the perp method is just (x, y) => (-y, x) or (y, -x)
             axes[i] = normal;
         }
@@ -119,18 +117,18 @@ public class ConvexPolygon {
     public ConvexPolygon convexHull(ArrayList<PointDouble> points) {
         Collections.sort(points, new PointXCompare());
         int n = points.size();
-        
+
         ArrayList<PointDouble> pl1 = new ArrayList<PointDouble>();
         ArrayList<PointDouble> pl2 = new ArrayList<PointDouble>();
         for (int i = 0; i < n; i++) {
             while (pl2.size() >= 2 && !(turnLeft(pl2.get(pl2.size() - 2), pl2.get(pl2.size() - 1), points.get(i)))) {
-                    pl2.remove(pl2.get(pl2.size() - 1));
+                pl2.remove(pl2.get(pl2.size() - 1));
             }
             pl2.add(points.get(i));
         }
         for (int i = n - 1; i >= 0; i--) {
             while (pl1.size() >= 2 && !(turnLeft(pl1.get(pl1.size() - 2), pl1.get(pl1.size() - 1), points.get(i)))) {
-                    pl1.remove(pl1.get(pl1.size() - 1));
+                pl1.remove(pl1.get(pl1.size() - 1));
             }
             pl1.add(points.get(i));
         }
@@ -148,10 +146,10 @@ public class ConvexPolygon {
     }
 
     public Boolean intersects(ConvexPolygon pol2) {
-        Vec2d[] axes1 = this.Getaxes();
-        Vec2d[] axes2 = pol2.Getaxes();
+        PointDouble[] axes1 = this.Getaxes();
+        PointDouble[] axes2 = pol2.Getaxes();
         for (int i = 0; i < axes1.length; i++) {
-            Vec2d axis = axes1[i];
+            PointDouble axis = axes1[i];
             // project both shapes onto the axis
             Projection p1 = this.project(axis);
             Projection p2 = pol2.project(axis);
@@ -162,7 +160,7 @@ public class ConvexPolygon {
             }
         }
         for (int i = 0; i < axes2.length; i++) {
-            Vec2d axis = axes2[i];
+            PointDouble axis = axes2[i];
             Projection p1 = this.project(axis);
             Projection p2 = pol2.project(axis);
             if (!p1.overlap(p2)) {
@@ -172,7 +170,7 @@ public class ConvexPolygon {
         return true;
     }
 
-    public Projection project(Vec2d axis) {
+    public Projection project(PointDouble axis) {
         double min = ((axis.x * this.points.get(0).x) + (axis.y * this.points.get(0).y));
         double max = min;
         for (int i = 1; i < this.points.size(); i++) {
@@ -198,13 +196,14 @@ public class ConvexPolygon {
     }
 
     public Boolean deleteVertex(PointDouble pt) {
-        if(this.points.size() > 3)
+        if (this.points.size() > 3) {
             for (int i = 0; i < this.points.size(); i++) {
                 if (this.points.get(i).equals(pt)) {
                     this.points.remove(i);
                     return true;
                 }
             }
+        }
         return false;
     }
 
@@ -228,5 +227,3 @@ public class ConvexPolygon {
         }
     }
 }
-
-

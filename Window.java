@@ -1,5 +1,3 @@
-
-import com.sun.javafx.geom.Vec2d;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -10,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.event.MouseInputAdapter;
-import javax.swing.event.MouseInputListener;
 
 /**
  *

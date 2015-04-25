@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Réprésente un point dans un plan cartésien en 2 dimensions
@@ -41,15 +42,15 @@ public class PointDouble {
         return true;
     }
 
-    public static PointDouble[] getNPointsOnCircle(PointDouble center, double radius, int n) {
+    public static ArrayList<PointDouble> getNPointsOnCircle(PointDouble center, double radius, int n) {
         double alpha = Math.PI * 2 / n;
-        PointDouble[] points = new PointDouble[n];
+        ArrayList<PointDouble> points = new ArrayList<>();
 
         int i = -1;
         while (++i < n) {
             double theta = alpha * i;
             PointDouble p = new PointDouble(Math.cos(theta) * radius, Math.sin(theta) * radius);
-            points[i] = p;
+            points.add(p);
         }
         return points;
     }
