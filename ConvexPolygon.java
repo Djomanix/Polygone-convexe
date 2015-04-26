@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -47,6 +48,10 @@ public class ConvexPolygon {
         return vertices;
     }
 
+    /**
+     * Returns the axis corresponding to the edges of the polygon, used to check
+     * for detection collision
+     */
     public PointDouble[] Getaxes() {
         PointDouble[] axes = new PointDouble[this.points.size()];
         for (int i = 0; i < this.points.size(); i++) {
@@ -64,6 +69,9 @@ public class ConvexPolygon {
         return axes;
     }
 
+    /**
+     * Checks if the polygon is convex
+     */
     public boolean isConvex() {
         PointDouble prev = points.get(points.size() - 2);
         PointDouble curr = points.get(points.size() - 1);
@@ -80,6 +88,9 @@ public class ConvexPolygon {
         return true;
     }
 
+    /**
+     * Checks if a given point is within the polygon
+     */
     public boolean contain(PointDouble p) {
         PointDouble prev = points.get(points.size() - 1);
         PointDouble curr = p;
@@ -100,6 +111,9 @@ public class ConvexPolygon {
                 - p2.getY()) - (p3.getX() - p2.getX()) * (p2.getY() - p1.getY())) > 0;
     }
 
+    /**
+     * Checks if the vertices of the polygon are in counter-clock wise order
+     */
     public boolean isCCW() {
         double min = points.get(0).getY();
         int minIndex = 0;
@@ -114,6 +128,9 @@ public class ConvexPolygon {
         return turnLeft(prev, points.get(minIndex), next);
     }
 
+    /**
+     * Calculates the convex hull of list of points
+     */
     public ConvexPolygon convexHull(ArrayList<PointDouble> points) {
         Collections.sort(points, new PointXCompare());
         int n = points.size();
@@ -138,6 +155,9 @@ public class ConvexPolygon {
         return new ConvexPolygon(pl2);
     }
 
+    /**
+     * Translates the polygon from the given numbers
+     */
     public void translate(double x, double y) {
         for (PointDouble p : this.points) {
             p.x += x;
@@ -145,6 +165,10 @@ public class ConvexPolygon {
         }
     }
 
+    /**
+     * Checks for an intersection between the polygon and the second given
+     * polygon
+     */
     public Boolean intersects(ConvexPolygon pol2) {
         PointDouble[] axes1 = this.Getaxes();
         PointDouble[] axes2 = pol2.Getaxes();
@@ -170,6 +194,9 @@ public class ConvexPolygon {
         return true;
     }
 
+    /**
+     * Generates a projection of an edge of the polygon on a given axis
+     */
     public Projection project(PointDouble axis) {
         double min = ((axis.x * this.points.get(0).x) + (axis.y * this.points.get(0).y));
         double max = min;
@@ -207,6 +234,10 @@ public class ConvexPolygon {
         return false;
     }
 
+    /**
+     * Sorts the vertices of the polygon in an order specified by the sorter
+     * used
+     */
     public void sortVertices(PolygonSorter sorter) {
         PointDouble[] arrPointDoubles = points.toArray(new PointDouble[points.size()]);
         Arrays.sort(arrPointDoubles, sorter);

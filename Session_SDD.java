@@ -1,5 +1,5 @@
 /**
- *
+ * Main of the demo
  * @author romis_000
  */
 public class Session_SDD {
@@ -12,7 +12,4 @@ public class Session_SDD {
         Thread t1 = new Thread(w);
         t1.start();
     }
-    
-    
-    
 }

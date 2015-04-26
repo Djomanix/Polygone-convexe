@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.event.MouseInputAdapter;
 
 /**
- *
+ * Graphical interface class
  * @author Johan, romis_000
  */
 public class Window extends JFrame implements Runnable {

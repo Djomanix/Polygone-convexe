@@ -1,6 +1,9 @@
+
 import java.util.Comparator;
 
 /**
+ * An utility class to sort the polygon vertices, is extended by AntiClockSort
+ * and ClockSort
  *
  * @author Johan
  */
@@ -12,6 +15,9 @@ public abstract class PolygonSorter implements Comparator<PointDouble> {
         this.center = calcCenter(podoubles);
     }
 
+    /**
+     * returns the point representing the center of a polygon
+     */
     final PointDouble calcCenter(double[][] podoubles) {
         double sumx = 0;
         double sumy = 0;

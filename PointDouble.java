@@ -1,7 +1,8 @@
+
 import java.util.ArrayList;
 
 /**
- * Réprésente un point dans un plan cartésien en 2 dimensions
+ * Represents a 2d point with double coordinates
  *
  * @author Johan
  */
@@ -42,6 +43,9 @@ public class PointDouble {
         return true;
     }
 
+    /**
+     * returns a array of n points on a circle
+     */
     public static ArrayList<PointDouble> getNPointsOnCircle(PointDouble center, double radius, int n) {
         double alpha = Math.PI * 2 / n;
         ArrayList<PointDouble> points = new ArrayList<>();
