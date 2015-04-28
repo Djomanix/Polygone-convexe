@@ -1,0 +1,48 @@
+--- Benchmarks pour la structure de données ConvexPolyogon ---
+
+-> Opération addVertex:
+addVertex: On a ajouté un sommet à un polygone de 1000 sommets en 0.635529ms <-> 6.35529E-4s
+addVertex: On a ajouté un sommet à un polygone de 10000 sommets en 3.15096ms <-> 0.00315096s
+addVertex: On a ajouté un sommet à un polygone de 20000 sommets en 6.552766ms <-> 0.006552766s
+addVertex: On a ajouté un sommet à un polygone de 50000 sommets en 7.822593ms <-> 0.007822594s
+addVertex: On a ajouté un sommet à un polygone de 100000 sommets en 9.100632ms <-> 0.009100632s
+
+-> Opération sortVertices:
+sortVertices: On a trié 1000 sommets d'un polygone en 0.833003ms <-> 8.3300297E-4s
+sortVertices: On a trié 10000 sommets d'un polygone en 6.497343ms <-> 0.006497343s
+sortVertices: On a trié 20000 sommets d'un polygone en 8.008983ms <-> 0.008008983s
+sortVertices: On a trié 50000 sommets d'un polygone en 46.906822ms <-> 0.04690682s
+sortVertices: On a trié 100000 sommets d'un polygone en 66.593864ms <-> 0.06659386s
+sortVertices: On a trié 1000000 sommets d'un polygone en 1116.6176ms <-> 1.1166176s
+sortVertices: On a trié 10000000 sommets d'un polygone en 13927.151ms <-> 13.927152s
+
+-> Opération intersects:
+intersects: On a testé l'intersection de deux polygones de 10 sommets en 0.611307ms <-> 6.1130704E-4s
+intersects: On a testé l'intersection de deux polygones de 100 sommets en 2.433732ms <-> 0.002433732s
+intersects: On a testé l'intersection de deux polygones de 1000 sommets en 15.320854ms <-> 0.015320854s
+intersects: On a testé l'intersection de deux polygones de 10000 sommets en 674.53186ms <-> 0.6745319s
+intersects: On a testé l'intersection de deux polygones de 20000 sommets en 2683.7307ms <-> 2.6837306s
+intersects: On a testé l'intersection de deux polygones de 50000 sommets en 16993.965ms <-> 16.993965s
+
+-> Opération convexHull:
+convexHull: On a généré l'enveloppe convexe de 10 points en 1.188539ms <-> 0.0011885391s
+convexHull: On a généré l'enveloppe convexe de 100 points en 3.043397ms <-> 0.0030433969s
+convexHull: On a généré l'enveloppe convexe de 1000 points en 7.351284ms <-> 0.007351284s
+convexHull: On a généré l'enveloppe convexe de 10000 points en 62.85171ms <-> 0.06285171s
+convexHull: On a généré l'enveloppe convexe de 20000 points en 153.44502ms <-> 0.15344502s
+convexHull: On a généré l'enveloppe convexe de 50000 points en 997.35236ms <-> 0.99735236s
+convexHull: On a généré l'enveloppe convexe de 100000 points en 3809.888ms <-> 3.809888s
+
+-> Opération isConvex:
+isConvex: On a testé la convexité d'un polygone de 1000 points en 0.048855ms <-> 4.8855E-5s
+isConvex: On a testé la convexité d'un polygone de 10000 points en 0.199938ms <-> 1.99938E-4s
+isConvex: On a testé la convexité d'un polygone de 100000 points en 0.279994ms <-> 2.79994E-4s
+isConvex: On a testé la convexité d'un polygone de 1000000 points en 4.812862ms <-> 0.004812862s
+isConvex: On a testé la convexité d'un polygone de 10000000 points en 42.846497ms <-> 0.042846497s
+
+-> Opération contain:
+contain: On a testé si un polygone de 1000 sommets contient un point en 0.009853ms <-> 9.853E-6s
+contain: On a testé si un polygone de 10000 sommets contient un point en 0.04475ms <-> 4.4750002E-5s
+contain: On a testé si un polygone de 100000 sommets contient un point en 0.788664ms <-> 7.88664E-4s
+contain: On a testé si un polygone de 1000000 sommets contient un point en 10.553152ms <-> 0.010553152s
+contain: On a testé si un polygone de 10000000 sommets contient un point en 0.516881ms <-> 5.16881E-4s
