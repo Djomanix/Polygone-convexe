@@ -76,7 +76,9 @@ public class ConvexPolygon {
         PointDouble prev = points.get(points.size() - 2);
         PointDouble curr = points.get(points.size() - 1);
         PointDouble next = points.get(0);
+        // Are the first two selected edges making a turnleft ?
         boolean isCCW = turnLeft(prev, curr, next);
+        // Verify if all the edges are making the same type of angle as the first two
         for (int i = 1; i < points.size(); i++) {
             prev = curr;
             curr = next;
@@ -95,7 +97,9 @@ public class ConvexPolygon {
         PointDouble prev = points.get(points.size() - 1);
         PointDouble curr = p;
         PointDouble next = points.get(0);
+        // Is the point left or right of the selected edge ?
         boolean isCCW = turnLeft(prev, curr, next);
+        // Is the point the same side of every other edges of the polygon ?
         for (int i = 1; i < points.size(); i++) {
             prev = next;
             next = points.get(i);
@@ -106,6 +110,10 @@ public class ConvexPolygon {
         return true;
     }
 
+    /**
+     * Check the sign of the angle between vectors [p1, p2] and [p2, p3]
+     * with the cross product
+     */
     public boolean turnLeft(PointDouble p1, PointDouble p2, PointDouble p3) {
         return ((p2.getX() - p1.getX()) * (p3.getY()
                 - p2.getY()) - (p3.getX() - p2.getX()) * (p2.getY() - p1.getY())) > 0;
@@ -113,6 +121,7 @@ public class ConvexPolygon {
 
     /**
      * Checks if the vertices of the polygon are in counter-clock wise order
+     * The vertices of the polygon need to be sorted for this test
      */
     public boolean isCCW() {
         double min = points.get(0).getY();
@@ -130,6 +139,7 @@ public class ConvexPolygon {
 
     /**
      * Calculates the convex hull of list of points
+     * Using the monotone chain algorithm
      */
     public ConvexPolygon convexHull(ArrayList<PointDouble> points) {
         Collections.sort(points, new PointXCompare());
@@ -245,11 +255,21 @@ public class ConvexPolygon {
         points.addAll(Arrays.asList(arrPointDoubles));
     }
 
+    /*
+    * Add a vertex to the polygon
+    * Return true if the vertex is added to the polygon
+    * Return false otherwise, which means that the addition
+    * of the vertex would have made it concave.
+    */
     public Boolean addVertex(PointDouble pt) {
+        // Make a temporary list to check some properties of the new polygon
         ArrayList<PointDouble> tempList = new ArrayList<>(Arrays.asList(this.points.toArray(new PointDouble[this.points.size()])));
         tempList.add(pt);
+        // Create a temporary polygon
         ConvexPolygon tempPolygon = new ConvexPolygon(tempList);
+        // Sort it
         tempPolygon.sortVertices(new AntiClockSort(tempPolygon.getVertices()));
+        // We need the new polygon to be convex, or we can't accept to add the new vertex.
         if (tempPolygon.isConvex()) {
             this.points = tempPolygon.points;
             return true;
