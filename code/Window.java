@@ -21,12 +21,23 @@ public class Window extends JFrame implements Runnable {
     private ArrayList<ConvexPolygon> polygons = new ArrayList<>();
     private ArrayList<PointDouble> tempPoints = new ArrayList<>();
     private ArrayList<PointDouble> rdmPolyPoints = new ArrayList<>();
+    
+    // Top-left polygon
     private ConvexPolygon rdmPoly;
-    private ConvexPolygon pol1;
+    
+    // Central polygon
     private ConvexPolygon pol2;
+    
+    // Bottom-Left polygon
     private ConvexPolygon pol3;
+    
+    // Bottom-Right polygon
     private ConvexPolygon pol4;
+    
+    // The polygon actually selected
     private ConvexPolygon selectedp;
+    
+    // Error message 
     private String errorMsg = "";
 
     public void run() {
@@ -169,11 +180,7 @@ public class Window extends JFrame implements Runnable {
         setBackground(Color.LIGHT_GRAY);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        ArrayList<PointDouble> points1 = new ArrayList<PointDouble>();
-        points1.add(new PointDouble(400, 500));
-        points1.add(new PointDouble(600, 400));
-        points1.add(new PointDouble(450, 350));
-        pol1 = new ConvexPolygon(points1);
+        // Central polygon
         ArrayList<PointDouble> points2 = new ArrayList<PointDouble>();
         points2.add(new PointDouble(600, 600));
         points2.add(new PointDouble(800, 500));
@@ -181,6 +188,8 @@ public class Window extends JFrame implements Runnable {
         points2.add(new PointDouble(550, 550));
         pol2 = new ConvexPolygon(points2);
         polygons.add(pol2);
+        
+        // Bottom-Left polygon
         ArrayList<PointDouble> points4 = new ArrayList<PointDouble>();
         points4.add(new PointDouble(200, 600));
         points4.add(new PointDouble(250, 800));
@@ -188,6 +197,8 @@ public class Window extends JFrame implements Runnable {
         points4.add(new PointDouble(100, 750));
         pol3 = new ConvexPolygon(points4);
         polygons.add(pol3);
+        
+        // Bottom-Right polygon
         ArrayList<PointDouble> points5 = new ArrayList<PointDouble>();
         points5.add(new PointDouble(800, 900));
         points5.add(new PointDouble(850, 800));
@@ -196,7 +207,7 @@ public class Window extends JFrame implements Runnable {
         pol4 = new ConvexPolygon(points5);
         polygons.add(pol4);
 
-        // convex hull randomized test
+        // Top-Left convex hull randomized polygon
         ArrayList<PointDouble> points3 = new ArrayList<PointDouble>();
         Random rdm = new Random();
         for (int i = 0; i < 15; i++) {
@@ -216,7 +227,6 @@ public class Window extends JFrame implements Runnable {
     }
 
     public void paintComponent(Graphics g) {
-        //g.fillPolygon(pol1.GetXPoints(), pol1.GetYPoints(), pol1.GetXPoints().length);
 
         // Draw everything
         for (ConvexPolygon p : polygons) {
