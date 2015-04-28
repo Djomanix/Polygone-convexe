@@ -173,7 +173,7 @@ public class Window extends JFrame implements Runnable {
     public Window() {
         addKeyListener(new KL());
         addMouseListener(new ML());
-        setTitle("Dev");
+        setTitle("Romain Chanoir, Johan Kayser - Travail de session - INF7341 - Polygones convexes");
         setSize(1000, 1000);
         setResizable(false);
         setVisible(true);
