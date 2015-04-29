@@ -1,0 +1,17 @@
+--- Benchmarks pour la structure de données ConvexPolyogon ---
+
+-> Opération isConvex:
+isConvex: On a testé la convexité d'un polygone de 1000 points en 0.32926ms <-> 3.2926E-4s
+isConvex: On a testé la convexité d'un polygone de 2000 points en 0.197064ms <-> 1.97064E-4s
+isConvex: On a testé la convexité d'un polygone de 5000 points en 0.486911ms <-> 4.86911E-4s
+isConvex: On a testé la convexité d'un polygone de 10000 points en 0.803034ms <-> 8.03034E-4s
+isConvex: On a testé la convexité d'un polygone de 20000 points en 1.605247ms <-> 0.001605247s
+isConvex: On a testé la convexité d'un polygone de 50000 points en 2.839358ms <-> 0.002839358s
+isConvex: On a testé la convexité d'un polygone de 100000 points en 1.758792ms <-> 0.0017587921s
+isConvex: On a testé la convexité d'un polygone de 200000 points en 1.454986ms <-> 0.0014549859s
+isConvex: On a testé la convexité d'un polygone de 500000 points en 2.395965ms <-> 0.0023959652s
+isConvex: On a testé la convexité d'un polygone de 1000000 points en 4.414635ms <-> 0.0044146352s
+isConvex: On a testé la convexité d'un polygone de 2000000 points en 8.827217ms <-> 0.008827217s
+isConvex: On a testé la convexité d'un polygone de 5000000 points en 20.80704ms <-> 0.020807039s
+isConvex: On a testé la convexité d'un polygone de 10000000 points en 39.345387ms <-> 0.039345387s
+isConvex: On a testé la convexité d'un polygone de 20000000 points en 106.76536ms <-> 0.10676536s

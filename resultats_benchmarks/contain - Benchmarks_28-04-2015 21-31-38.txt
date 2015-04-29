@@ -1,0 +1,17 @@
+--- Benchmarks pour la structure de données ConvexPolyogon ---
+
+-> Opération contain:
+contain: On a testé si un polygone de 1000 sommets contient un point en 0.150671ms <-> 1.5067101E-4s
+contain: On a testé si un polygone de 2000 sommets contient un point en 0.101816ms <-> 1.01816E-4s
+contain: On a testé si un polygone de 5000 sommets contient un point en 0.177358ms <-> 1.77358E-4s
+contain: On a testé si un polygone de 10000 sommets contient un point en 0.233192ms <-> 2.33192E-4s
+contain: On a testé si un polygone de 20000 sommets contient un point en 0.819046ms <-> 8.19046E-4s
+contain: On a testé si un polygone de 50000 sommets contient un point en 1.200035ms <-> 0.001200035s
+contain: On a testé si un polygone de 100000 sommets contient un point en 2.921057ms <-> 0.002921057s
+contain: On a testé si un polygone de 200000 sommets contient un point en 1.150358ms <-> 0.001150358s
+contain: On a testé si un polygone de 500000 sommets contient un point en 0.438467ms <-> 4.38467E-4s
+contain: On a testé si un polygone de 1000000 sommets contient un point en 1.590878ms <-> 0.001590878s
+contain: On a testé si un polygone de 2000000 sommets contient un point en 1.858146ms <-> 0.0018581459s
+contain: On a testé si un polygone de 5000000 sommets contient un point en 0.38099ms <-> 3.8099E-4s
+contain: On a testé si un polygone de 10000000 sommets contient un point en 14.699301ms <-> 0.014699301s
+contain: On a testé si un polygone de 20000000 sommets contient un point en 26.625753ms <-> 0.026625754s

@@ -1,0 +1,18 @@
+--- Benchmarks pour la structure de données ConvexPolyogon ---
+
+-> Opération convexHull:
+convexHull: On a généré l'enveloppe convexe de 10 points en 0.708608ms <-> 7.0860796E-4s
+convexHull: On a généré l'enveloppe convexe de 20 points en 1.042384ms <-> 0.0010423841s
+convexHull: On a généré l'enveloppe convexe de 50 points en 0.357588ms <-> 3.57588E-4s
+convexHull: On a généré l'enveloppe convexe de 100 points en 0.36662ms <-> 3.6662E-4s
+convexHull: On a généré l'enveloppe convexe de 200 points en 0.576ms <-> 5.7599996E-4s
+convexHull: On a généré l'enveloppe convexe de 500 points en 1.673809ms <-> 0.001673809s
+convexHull: On a généré l'enveloppe convexe de 1000 points en 3.814002ms <-> 0.003814002s
+convexHull: On a généré l'enveloppe convexe de 2000 points en 8.23849ms <-> 0.00823849s
+convexHull: On a généré l'enveloppe convexe de 5000 points en 15.990889ms <-> 0.015990889s
+convexHull: On a généré l'enveloppe convexe de 10000 points en 45.985607ms <-> 0.045985606s
+convexHull: On a généré l'enveloppe convexe de 20000 points en 156.31413ms <-> 0.15631413s
+convexHull: On a généré l'enveloppe convexe de 50000 points en 918.1135ms <-> 0.9181135s
+convexHull: On a généré l'enveloppe convexe de 100000 points en 3547.013ms <-> 3.547013s
+convexHull: On a généré l'enveloppe convexe de 200000 points en 13972.283ms <-> 13.972283s
+convexHull: On a généré l'enveloppe convexe de 500000 points en 175513.03ms <-> 175.51303s

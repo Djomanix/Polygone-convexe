@@ -1,0 +1,12 @@
+--- Benchmarks pour la structure de données ConvexPolyogon ---
+
+-> Opération addVertex:
+addVertex: On a ajouté un sommet à un polygone de 1000 sommets en 0.659342ms <-> 6.59342E-4s
+addVertex: On a ajouté un sommet à un polygone de 5000 sommets en 1.635217ms <-> 0.001635217s
+addVertex: On a ajouté un sommet à un polygone de 10000 sommets en 3.008094ms <-> 0.0030080942s
+addVertex: On a ajouté un sommet à un polygone de 20000 sommets en 8.218783ms <-> 0.008218783s
+addVertex: On a ajouté un sommet à un polygone de 50000 sommets en 7.205548ms <-> 0.0072055478s
+addVertex: On a ajouté un sommet à un polygone de 100000 sommets en 8.309925ms <-> 0.008309925s
+addVertex: On a ajouté un sommet à un polygone de 200000 sommets en 20.984398ms <-> 0.020984398s
+addVertex: On a ajouté un sommet à un polygone de 500000 sommets en 42.538227ms <-> 0.042538226s
+addVertex: On a ajouté un sommet à un polygone de 1000000 sommets en 87.13536ms <-> 0.08713536s

@@ -1,0 +1,15 @@
+--- Benchmarks pour la structure de données ConvexPolyogon ---
+
+-> Opération sortVertices:
+sortVertices: On a trié 1000 sommets d'un polygone en 1.700084ms <-> 0.001700084s
+sortVertices: On a trié 5000 sommets d'un polygone en 5.499306ms <-> 0.005499306s
+sortVertices: On a trié 10000 sommets d'un polygone en 11.322946ms <-> 0.011322945s
+sortVertices: On a trié 20000 sommets d'un polygone en 24.943323ms <-> 0.024943324s
+sortVertices: On a trié 50000 sommets d'un polygone en 81.69599ms <-> 0.08169599s
+sortVertices: On a trié 100000 sommets d'un polygone en 71.971725ms <-> 0.07197172s
+sortVertices: On a trié 200000 sommets d'un polygone en 111.25512ms <-> 0.11125512s
+sortVertices: On a trié 500000 sommets d'un polygone en 280.05362ms <-> 0.28005362s
+sortVertices: On a trié 1000000 sommets d'un polygone en 840.6388ms <-> 0.8406388s
+sortVertices: On a trié 2000000 sommets d'un polygone en 1825.7379ms <-> 1.825738s
+sortVertices: On a trié 5000000 sommets d'un polygone en 6464.5874ms <-> 6.464587s
+sortVertices: On a trié 10000000 sommets d'un polygone en 20606.264ms <-> 20.606264s

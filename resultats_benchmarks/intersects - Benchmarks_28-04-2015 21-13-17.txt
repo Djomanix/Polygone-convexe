@@ -1,0 +1,16 @@
+--- Benchmarks pour la structure de données ConvexPolyogon ---
+
+-> Opération intersects:
+intersects: On a testé l'intersection de deux polygones de 10 sommets en 0.872417ms <-> 8.7241695E-4s
+intersects: On a testé l'intersection de deux polygones de 20 sommets en 0.236066ms <-> 2.36066E-4s
+intersects: On a testé l'intersection de deux polygones de 50 sommets en 0.967254ms <-> 9.67254E-4s
+intersects: On a testé l'intersection de deux polygones de 100 sommets en 1.064965ms <-> 0.001064965s
+intersects: On a testé l'intersection de deux polygones de 200 sommets en 4.070595ms <-> 0.004070595s
+intersects: On a testé l'intersection de deux polygones de 500 sommets en 2.337667ms <-> 0.002337667s
+intersects: On a testé l'intersection de deux polygones de 1000 sommets en 7.712987ms <-> 0.007712987s
+intersects: On a testé l'intersection de deux polygones de 2000 sommets en 28.80577ms <-> 0.02880577s
+intersects: On a testé l'intersection de deux polygones de 5000 sommets en 175.89568ms <-> 0.17589568s
+intersects: On a testé l'intersection de deux polygones de 10000 sommets en 681.1256ms <-> 0.6811256s
+intersects: On a testé l'intersection de deux polygones de 20000 sommets en 2727.4988ms <-> 2.7274988s
+intersects: On a testé l'intersection de deux polygones de 50000 sommets en 25194.936ms <-> 25.194935s
+intersects: On a testé l'intersection de deux polygones de 100000 sommets en 131545.72ms <-> 131.54572s
